@@ -1,11 +1,22 @@
 import React from "react";
-import Api from "./api/Api";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import Login from "./components/login/Login";
 
 const App = () => {
   return (
     <div>
-      <Api />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 };
